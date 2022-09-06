@@ -61,6 +61,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+
         <script>
             addressBox = document.getElementById("input-address");
             addressButton = document.getElementById("button-copy-address");
@@ -78,43 +79,6 @@
                     $('.btn').blur();
                 }, 1);
             });
-
         </script>
-        <!--<script>
-            const themey = window.matchMedia("(prefers-color-scheme: dark)");
-            const theme = localStorage.getItem('theme');
-            if (theme === "dark") {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-
-            function set_theme(theme) {
-                if (theme) {
-                    
-                } else {
-                    if (themey.matches) {
-                        var div = document.getElementById("superdiv").style;
-                        div.backgroundColor = "black";
-                        div.color = "white";
-                    } else {
-                        var div = document.getElementById("superdiv").style;
-                        div.backgroundColor = "white";
-                        div.color = "black";
-                    }
-                }
-            }
-
-            window.onload = set_theme;
-            // initial theme set
-            //if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            //    set_theme(true);
-            //} else {
-            //    set_theme(false);
-            //}
-
-            // keep watch for theme changes
-            themey.addEventListener("change", event => {
-                set_theme(event.matches);
-            });
-        </script>-->
     </body>
 </html>
