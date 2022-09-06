@@ -1,0 +1,59 @@
+html { 
+  --link-color: lightblue;
+  --main-background-color: #f2f2f7;
+  --container-background-color: white;
+  --button-background-color: #e5e5ea;
+  --button-text-color: black;
+  --main-text-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --link-color: darkblue;
+    --main-background-color: black;
+    --container-background-color: #1c1c1e;
+    --button-background-color: #3a3a3c;
+    --button-text-color: white;
+    --main-text-color: white;
+  }
+}
+
+#bigdiv {
+  color: var(--main-text-color);
+  background-color: var(--main-background-color);
+  font-family: Noto Sans;
+}
+
+#imagerow {
+  background: linear-gradient(to top, #0e5ad9, #189cf8);
+}
+
+.container-fill {
+  background-color: var(--container-background-color);
+}
+
+.rounded-top-custom {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.rounded-bottom-custom {
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+.rounded-button-custom {
+  border-radius: 1rem;
+}
+
+#special-text {
+  background: linear-gradient(to right, #0e5ad9, #189cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button-style {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  border: none;
+}

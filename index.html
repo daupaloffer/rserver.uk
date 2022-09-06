@@ -1,0 +1,120 @@
+ <!doctype html>
+<html lang="en">
+    <head>
+        <title>RServer</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+        <style>
+            @font-face {
+                font-family: geomanist;
+                src: url("assets/geomanist-regular-webfont.woff2");
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="bigdiv" class="d-flex align-items-center justify-content-center min-vh-100">
+            <div class="container text-center mx-3">
+                <div class="row rounded-top-custom" id="imagerow">
+                    <div class="col">
+                        <img src="assets/rserver-logo-full.avif" width="80%" style="margin-bottom: 40px; margin-top: 40px;">
+                    </div>
+                </div>
+                <div class="row container-fill p-2">
+                    <div class="col">
+                        <h1 style="font-family: geomanist; margin-top: 10px;">welcome to <b id="special-text">your</b> community</h1><br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac fermentum metus. Proin sed porta lorem. Etiam a mi feugiat, commodo sapien ullamcorper, ullamcorper neque. Phasellus justo est, volutpat quis nisl eget, tincidunt fermentum lacus. Proin sollicitudin rutrum est hendrerit iaculis.</p>
+                        <p>Maecenas tristique tellus non enim aliquet, eget rhoncus dui euismod?</p>
+                    </div>
+                </div>
+                <div class="row container-fill rounded-bottom-custom p-2">
+                    <div class="col">
+                        <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Button choice" style="margin-bottom: 12px; font-family: geomanist;">
+                            <button type="button" class="btn button-style btn-primary rounded-button-custom me-3" data-bs-toggle="modal" data-bs-target="#minecraft-modal" style="--bs-btn-padding-y: 0.75rem; --bs-btn-padding-x: 1.75rem; --bs-btn-font-size: 1.2rem;"><b>minecraft</b></button>
+                            <a role="button" class="btn button-style btn-primary rounded-button-custom" href="https://rserver.uk/discord" style="--bs-btn-padding-y: 0.75rem; --bs-btn-padding-x: 1.75rem; --bs-btn-font-size: 1.2rem;"><b>discord</b></a>
+                        </div>
+
+                        <div class="modal fade" id="minecraft-modal" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Here's the server IP!</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="input-address" aria-describedby="button-copy-address" value="rserver.uk" readonly="readonly" onclick="this.select();">
+                                            <button class="btn btn-primary" type="button" id="button-copy-address" onclick="minecraftCopy()">Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+        <script>
+            addressBox = document.getElementById("input-address");
+            addressButton = document.getElementById("button-copy-address");
+
+            function minecraftCopy() {
+                navigator.clipboard.writeText(addressBox.value);
+                addressBox.style.backgroundColor = "lightgreen";
+                addressBox.style.color = "green";
+                addressButton.innerHTML = "Copied! Have fun!";
+            }
+
+            $('body').on('hidden.bs.modal', '.modal', function() {
+                // for some reason this doesn't work outside of a setTimeout, even if the delay is 0
+                setTimeout(() => {
+                    $('.btn').blur();
+                }, 1);
+            });
+
+        </script>
+        <!--<script>
+            const themey = window.matchMedia("(prefers-color-scheme: dark)");
+            const theme = localStorage.getItem('theme');
+            if (theme === "dark") {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+
+            function set_theme(theme) {
+                if (theme) {
+                    
+                } else {
+                    if (themey.matches) {
+                        var div = document.getElementById("superdiv").style;
+                        div.backgroundColor = "black";
+                        div.color = "white";
+                    } else {
+                        var div = document.getElementById("superdiv").style;
+                        div.backgroundColor = "white";
+                        div.color = "black";
+                    }
+                }
+            }
+
+            window.onload = set_theme;
+            // initial theme set
+            //if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            //    set_theme(true);
+            //} else {
+            //    set_theme(false);
+            //}
+
+            // keep watch for theme changes
+            themey.addEventListener("change", event => {
+                set_theme(event.matches);
+            });
+        </script>-->
+    </body>
+</html>
