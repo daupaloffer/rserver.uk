@@ -16,6 +16,10 @@ html {
     --button-text-color: white;
     --main-text-color: white;
   }
+
+  .modal-button-style {
+    filter: invert(1);
+  }
 }
 
 #bigdiv {
@@ -56,4 +60,22 @@ html {
   background-color: var(--button-background-color);
   color: var(--button-text-color);
   border: none;
+}
+
+.modal-style {
+  background-color: var(--container-background-color);
+  color: var(--main-text-color);
+  border-top: none;
+  border-bottom: none;
+}
+
+.modal-input-style {
+  background-color: var(--button-background-color);
+  color: var(--main-text-color);
+  border: none;
+}
+
+.modal-input-style:focus {
+  background-color: var(--button-background-color);
+  color: var(--main-text-color);
 }
